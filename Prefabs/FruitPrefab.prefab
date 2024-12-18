@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 3301803553339896049}
   - component: {fileID: 6648587819770816043}
   - component: {fileID: 5216981447349040377}
+  - component: {fileID: 7136882795983367253}
   - component: {fileID: 2994099985132001782}
-  - component: {fileID: 5211226498227926572}
   m_Layer: 0
-  m_Name: Fruit
+  m_Name: FruitPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,6 +85,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7136882795983367253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7338165671919962238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f4c6c828df66c44a6518ba402bcc05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &2994099985132001782
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106,15 +118,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5211226498227926572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7338165671919962238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec1f189dc47477f4cb1ddfac4dff9a5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
