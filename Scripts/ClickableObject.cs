@@ -12,7 +12,8 @@ public abstract class ClickableObject : MonoBehaviour
 	protected abstract void OnMouseDown();
 	private void Update()
 	{
-		if (gameManager.gameIsOver)
+		//uhh don't pay attention to this specific line ok???
+		if (gameManager.GetLives() <= 0)
 		{
 			Destroy(gameObject);
 		}

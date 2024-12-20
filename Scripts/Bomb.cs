@@ -12,6 +12,7 @@ public class Bomb : ClickableObject
 	private IEnumerator DestroyAfterSeconds(float seconds)
 	{
 		yield return new WaitForSeconds(seconds);
+		gameManager.numFruitsOnGrid--;
 		Destroy(gameObject);
 	}
 	

@@ -17,10 +17,24 @@ public class GameManager : MonoBehaviour
 	public int numFruitsOnGrid = 0;
 	public int score = 0;
 	public TextMeshProUGUI scoreText;
-	public int lives = 3;
+	private int lives = 3;
 	public TextMeshProUGUI livesText;
 	public TextMeshProUGUI gameOverText;
+
+	//ENCAPSULATION
+	//man i really hope this counts xd
+	//i do not understand why there is so much confusing shorthand for this stuff :(
+	//im just gonna do the most intuitive thing for me to demonstrate that i understand the concepts behind it
 	
+
+	private void SubtractLives(int value)
+	{
+		lives -= value;
+	}
+	public int GetLives()
+	{
+		return lives;
+	}
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -34,7 +48,7 @@ public class GameManager : MonoBehaviour
 		if (!gameIsOver && numFruitsOnGrid < 4)
 		{
 			//choose a random fruit prefab from the list avaliable
-			int fruitPrefabIndex = Random.Range(0, fruitPrefabs.Length - 1);
+			int fruitPrefabIndex = Random.Range(0, fruitPrefabs.Length);
 			GameObject fruitPrefab = fruitPrefabs[fruitPrefabIndex];
 			
 			//instantiate a fruit
@@ -61,6 +75,7 @@ public class GameManager : MonoBehaviour
 		gameOverText.gameObject.SetActive(true);
 		
 	}
+
 	public void IncreaseScore(int scoreIncrease)
 	{
 		score += scoreIncrease;
@@ -73,7 +88,7 @@ public class GameManager : MonoBehaviour
 	//ABSTRACTION (best example)
 	public void DecreaseLives()
 	{
-		lives--;
+		DecreaseLives();
 		UpdateLivesTextColor();
 		UpdateLivesText();
 		if (lives <= 0)
