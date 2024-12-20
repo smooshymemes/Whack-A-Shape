@@ -10,6 +10,12 @@ public abstract class ClickableObject : MonoBehaviour
 		gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 	}
 	protected abstract void OnMouseDown();
-	
+	private void Update()
+	{
+		if (gameManager.gameIsOver)
+		{
+			Destroy(gameObject);
+		}
+	}
 
 }

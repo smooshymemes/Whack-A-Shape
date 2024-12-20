@@ -12,4 +12,5 @@ public class Fruit : ClickableObject
 		gameManager.IncreaseScore(pointValue);
 		Destroy(gameObject);
 	}
+	
 }

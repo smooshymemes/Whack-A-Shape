@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 	public TextMeshProUGUI scoreText;
 	public int lives = 3;
 	public TextMeshProUGUI livesText;
+	public TextMeshProUGUI gameOverText;
 	
 	// Start is called before the first frame update
 	void Start()
@@ -57,7 +58,8 @@ public class GameManager : MonoBehaviour
 	{
 		gameIsOver = true;
 		Debug.Log("Game Over!");
-		//gameOverText.setActive(true);
+		gameOverText.gameObject.SetActive(true);
+		
 	}
 	public void IncreaseScore(int scoreIncrease)
 	{

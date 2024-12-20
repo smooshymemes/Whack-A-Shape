@@ -17,4 +17,8 @@ public class Bomb : ClickableObject
 
         Destroy(gameObject);
     }
+    public void DestroyBombs()
+    {
+        Destroy(gameObject);
+    }
 }
