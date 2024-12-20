@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -14,7 +16,10 @@ public class GameManager : MonoBehaviour
 	public float fruitSpacing = 2f;
 	public int numFruitsOnGrid = 0;
 	public int score = 0;
+	public TextMeshProUGUI scoreText;
 	public int lives = 3;
+	public TextMeshProUGUI livesText;
+	
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -22,7 +27,7 @@ public class GameManager : MonoBehaviour
 		//start the fruit spawning
 		InvokeRepeating(nameof(SpawnFruit), fruitSpawnDelay, fruitSpawnInterval);
 	}
-	//ABSTRACTION (best example)
+	
 	private void SpawnFruit()
 	{
 		if (!gameIsOver && numFruitsOnGrid < 4)
@@ -54,4 +59,41 @@ public class GameManager : MonoBehaviour
 		Debug.Log("Game Over!");
 		//gameOverText.setActive(true);
 	}
+	public void IncreaseScore(int scoreIncrease)
+	{
+		Debug.Log("Player Gained 10 Points");
+		score += scoreIncrease;
+		UpdateScoreText();
+	}
+	private void UpdateScoreText()
+	{
+		scoreText.text = "Score: " + score;
+	}
+	//ABSTRACTION (best example)
+	public void DecreaseLives()
+	{
+		lives--;
+		UpdateLivesTextColor();
+		UpdateLivesText();
+		if (lives == 0)
+		{
+			GameOver();
+		}
+	}
+	private void UpdateLivesTextColor()
+	{
+		if (lives <= 1)
+		{
+			livesText.color = Color.red;
+		}
+		else
+		{
+			livesText.color = Color.black;
+		}
+	}
+	private void UpdateLivesText()
+	{
+		livesText.text = "Lives: " + lives;
+	}
 }
+

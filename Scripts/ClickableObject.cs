@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//POLYMORPHISM
+//IHERITANCE
 public abstract class ClickableObject : MonoBehaviour
 {
-	
 	protected GameManager gameManager;
 	private void Start()
 	{

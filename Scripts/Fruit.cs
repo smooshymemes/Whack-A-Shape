@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Fruit : ClickableObject
 {
+	private readonly int pointValue = 10;
 	//POLYMORPHISM
 	protected override void OnMouseDown()
 	{
 		gameManager.numFruitsOnGrid--;
-		Debug.Log("Player Gained 10 Points");
+		gameManager.IncreaseScore(pointValue);
 		Destroy(gameObject);
 	}
 }
