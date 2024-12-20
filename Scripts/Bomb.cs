@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class Bomb : ClickableObject
 {
-    //POLYMORPHISM
-    protected override void OnMouseDown()
-    {
-        gameManager.numFruitsOnGrid--;
-        gameManager.lives--;
-        Debug.Log("Player Lost 1 Life");
-        if (gameManager.lives == 0)
-        {
-            gameManager.GameOver();
-        }
-
-        Destroy(gameObject);
-    }
-    public void DestroyBombs()
-    {
-        Destroy(gameObject);
-    }
+	private readonly float despawnTime = 1.5f;
+	private void Start()
+	{
+		StartCoroutine(DestroyAfterSeconds(despawnTime));
+	}
+	private IEnumerator DestroyAfterSeconds(float seconds)
+	{
+		yield return new WaitForSeconds(seconds);
+		Destroy(gameObject);
+	}
+	
+	//POLYMORPHISM
+	protected override void OnMouseDown()
+	{
+		gameManager.DecreaseLives();
+		Destroy(gameObject);
+	}
+	public void DestroyBombs()
+	{
+		Destroy(gameObject);
+	}
 }

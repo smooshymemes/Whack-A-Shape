@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class ClickableObject : MonoBehaviour
 {
 	protected GameManager gameManager;
-	private void Start()
+	private void Awake()
 	{
 		gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 	}

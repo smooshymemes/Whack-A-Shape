@@ -63,7 +63,6 @@ public class GameManager : MonoBehaviour
 	}
 	public void IncreaseScore(int scoreIncrease)
 	{
-		Debug.Log("Player Gained 10 Points");
 		score += scoreIncrease;
 		UpdateScoreText();
 	}
@@ -77,7 +76,7 @@ public class GameManager : MonoBehaviour
 		lives--;
 		UpdateLivesTextColor();
 		UpdateLivesText();
-		if (lives == 0)
+		if (lives <= 0)
 		{
 			GameOver();
 		}
