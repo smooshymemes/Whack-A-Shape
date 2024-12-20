@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
 	//ABSTRACTION (best example)
 	public void DecreaseLives()
 	{
-		DecreaseLives();
+		SubtractLives(1);
 		UpdateLivesTextColor();
 		UpdateLivesText();
 		if (lives <= 0)
